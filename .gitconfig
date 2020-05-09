@@ -1,0 +1,60 @@
+[user]
+  name = John W. Newman
+  email = jwnewman12@gmail.com
+[alias]
+  s = status
+  a = add
+  ap = add -p
+  b = branch
+  c = commit
+  cl = clean -f -d
+  cm = commit -m
+  co = checkout
+  cp = cherry-pick
+  d = diff
+  dh = !"d() { git diff HEAD~$1^!; }; d"
+  dt = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  dth = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+  ds = diff --staged
+  f = fetch origin --tags -p
+  fu = fixup HEAD
+  g = log --graph --decorate --pretty=oneline --abbrev-commit --first-parent
+  ga = log --graph --decorate --pretty=oneline --abbrev-commit --first-parent --all
+  gl = log --graph --decorate --pretty=oneline --abbrev-commit --first-parent --branches
+  l = log
+  m = merge
+  mt = mergetool
+  p = pull
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbe = rebase --edit-todo
+  rbi = rebase -i
+  rbs = rebase --skip
+  rim = rebase -i master
+  rl = reflog
+  rt = restore
+  rts = restore --staged
+  rs = reset
+  rsh = reset --hard
+  rsm = reset --mixed
+  rv = revert
+  um = update-ref refs/heads/master refs/remotes/origin/master
+
+  fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash $REV^' -
+  credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+  rewrite = rebase -x 'git commit --amend -C HEAD --date=\"$(date -R)\" && sleep 1.05'
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[fetch]
+  prune = true
+[core]
+  autocrlf = input
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
