@@ -4,6 +4,7 @@ set nobackup
 set noswapfile
 
 colorscheme darkblue
+syntax on
 
 set tabstop=2
 set shiftwidth=2

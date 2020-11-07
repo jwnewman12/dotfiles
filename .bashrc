@@ -5,6 +5,14 @@
 # that can't tolerate any output.  So make sure this doesn't display
 # anything or bad things will happen !
 
+export EDITOR="/usr/bin/vim"
+PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+
 # TODO: fix bashcomp with these (I had it before somewhere)
 alias g="git"
 alias v="vim"
