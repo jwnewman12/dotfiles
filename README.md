@@ -3,7 +3,7 @@
 ## Installation
 
 ```console
-$ ./sync.sh
+$ ./install.sh
 ```
 
 ## Ackowledgments
