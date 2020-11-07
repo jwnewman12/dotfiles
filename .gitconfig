@@ -31,7 +31,7 @@
   rbe = rebase --edit-todo
   rbi = rebase -i
   rbs = rebase --skip
-  rim = rebase -i master
+  rim = rebase -i main
   rl = reflog
   rt = restore
   rts = restore --staged
@@ -39,7 +39,7 @@
   rsh = reset --hard
   rsm = reset --mixed
   rv = revert
-  um = update-ref refs/heads/master refs/remotes/origin/master
+  um = update-ref refs/heads/main refs/remotes/origin/main
 
   fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash $REV^' -
   credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
